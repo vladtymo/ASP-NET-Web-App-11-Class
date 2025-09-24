@@ -23,6 +23,11 @@ namespace WebApp_11Class.Controllers
             return View();
         }
 
+        public IActionResult AdminPanel()
+        {
+            return View();
+        }
+
         public IActionResult Products()
         {
             return View();
