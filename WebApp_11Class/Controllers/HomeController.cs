@@ -32,6 +32,42 @@ namespace WebApp_11Class.Controllers
             return View();
         }
 
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        public IActionResult Details()
+        {
+            return View();
+        }
+
+        public IActionResult Edit(int id)
+        {
+            var item = products.FirstOrDefault(x => x.Id == id);
+
+            if (item == null)
+                return NotFound(); // 404
+
+            return View(item);
+        }
+
+        [HttpPost]
+        public IActionResult SaveNewProduct(Product element)
+        {
+            products.Add(element);
+            return RedirectToAction("AdminPanel");
+        }
+
+        [HttpPost]
+        public IActionResult UpdateProduct(Product element)
+        {
+            var index = products.FindIndex(x => x.Id == element.Id);
+            products[index] = element;
+
+            return RedirectToAction("AdminPanel");
+        }
+
         public IActionResult AdminPanel()
         {
             return View(products);

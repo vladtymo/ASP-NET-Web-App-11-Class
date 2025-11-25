@@ -1,6 +1,8 @@
 ﻿@model List<Product>
 <h1>Products Admin Panel</h1>
 
+<a class="btn btn-primary" asp-controller="Home" asp-action="Create">Create Product</a>
+
 <table class="table">
     <thead>
         <tr>
@@ -24,6 +26,8 @@
                 <td>@i.Price$</td>
                 <td>@i.Category</td>
                 <td>
+                    <a class="btn btn-dark" asp-controller="Home" asp-action="Details" asp-route-id="@i.Id">View</a>
+                    <a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-id="@i.Id">Edit</a>
                     <a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@i.Id">Delete</a>
                 </td>
             </tr>
