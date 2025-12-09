@@ -1,1 +1,72 @@
-﻿
+﻿@model Product
+
+<div class="container py-5">
+    <div class="row g-4">
+
+        <!-- Product Image -->
+        <div class="col-md-5">
+            <img src="@Model.ImageUrl"
+                 alt="Product"
+                 class="img-fluid rounded shadow-sm">
+        </div>
+
+        <!-- Product Info -->
+        <div class="col-md-7">
+            <h2 class="mb-2">@Model.Title</h2>
+
+            <div class="d-flex align-items-center mb-3">
+                <span class="badge bg-success me-2">In Stock</span>
+                <span class="text-warning">★★★★☆</span>
+                <span class="ms-2 text-muted">(42 reviews)</span>
+            </div>
+
+            <h3 class="text-primary mb-3">$@Model.Price</h3>
+
+            <p class="text-muted mb-4">
+                Short product summary that highlights key value points.
+            </p>
+
+            <!-- Quantity + Buttons -->
+            <div class="d-flex align-items-center mb-4">
+                <input type="number" value="1" min="1"
+                       class="form-control w-auto me-3">
+                <button class="btn btn-primary me-2">Add to Cart</button>
+                <button class="btn btn-outline-secondary">Add to Wishlist</button>
+            </div>
+
+            <ul class="list-unstyled text-muted">
+                <li><strong>Category:</strong> Accessories</li>
+                <li><strong>SKU:</strong> ABC-12345</li>
+                <li><strong>Brand:</strong> CoolBrand</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="mt-5">
+        <ul class="nav nav-tabs" id="productTabs" role="tablist">
+            <li class="nav-item">
+                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#description">
+                    Description
+                </button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#reviews">
+                    Reviews (42)
+                </button>
+            </li>
+        </ul>
+
+        <div class="tab-content p-4 bg-white border-bottom border-start border-end">
+            <div class="tab-pane fade show active" id="description">
+                <p>
+                    Detailed description text goes here.
+                </p>
+            </div>
+
+            <div class="tab-pane fade" id="reviews">
+                <p>No reviews yet — be the first!</p>
+            </div>
+        </div>
+    </div>
+</div>
