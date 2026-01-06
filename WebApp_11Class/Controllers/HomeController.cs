@@ -24,7 +24,7 @@ namespace WebApp_11Class.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return View(products);
         }
 
         public IActionResult Privacy()
