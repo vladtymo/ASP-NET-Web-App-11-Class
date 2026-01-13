@@ -1,0 +1,27 @@
+﻿@model List<Category>
+<h1>Category Admin Panel</h1>
+
+<a class="btn btn-primary" asp-action="Create">Create Category</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model)
+        {
+            <tr>
+                <th scope="row">@i.Id</th>
+                <td>@i.Name</td>
+                <td>
+                    <a class="btn btn-info" asp-action="Edit" asp-route-id="@i.Id">Edit</a>
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@i.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,21 @@
+﻿@model Category
+<h1>Update Category</h1>
+
+<form asp-action="SaveNew">
+    <div class="mb-3">
+        <label class="form-label">Id</label>
+        <input asp-for="Id" disabled readonly type="text" class="form-control" placeholder="Enter ID">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input asp-for="Name" type="text" class="form-control" placeholder="Enter name">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Description</label>
+        <input asp-for="Description" type="text" class="form-control" placeholder="Enter description">
+    </div>
+
+    <button type="submit" class="btn btn-success">Save</button>
+</form>
