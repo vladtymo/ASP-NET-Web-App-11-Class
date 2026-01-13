@@ -20,10 +20,18 @@ namespace WebApp_11Class.Controllers
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
-        }   
+        }
+
+
+        public IActionResult AddFavorite(int id)
+        {
+            HttpContext.Session.SetInt32("FavoriteProductId", id);
+            return RedirectToAction("Index");
+        }
 
         public IActionResult Index()
         {
+            ViewBag.FavId = HttpContext.Session.GetInt32("FavoriteProductId");
             return View(products);
         }
 

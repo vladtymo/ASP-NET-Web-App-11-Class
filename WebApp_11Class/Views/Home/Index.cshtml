@@ -12,7 +12,14 @@
                     <p class="card-text">@i.Category  - @i.Price$</p>
                 </div>
                 <div class="card-footer text-center">
-                    <button type="button" class="btn btn-primary">Favorite</button>
+                    @if(ViewBag.FavId == @i.Id)
+                    {
+                        <button type="button" class="btn btn-outline-primary">Favorite</button>
+                    }
+                    else
+                    {
+                        <a asp-action="AddFavorite" asp-route-id="@i.Id" class="btn btn-primary">Favorite</a>
+                    }
                     <button type="button" class="btn btn-success">Add to Cart</button>
                 </div>
             </div>
